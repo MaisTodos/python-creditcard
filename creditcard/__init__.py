@@ -1,3 +1,5 @@
+from .card import CreditCard  # noqa: F401
+
 """Top-level package for credit_card."""
 
 __author__ = """MaisTODOS"""
