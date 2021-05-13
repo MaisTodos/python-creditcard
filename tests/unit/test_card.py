@@ -38,6 +38,8 @@ class TestCard:
             ("cabal", "6043240000000000"),
             ("master", "5369835519963014"),
             ("visa", "4539578763621486"),
+            ("master", "5502090000000000"),
+            ("master", "5162300000000000"),
         ],
     )
     def test_get_brand(self, brand, number):
