@@ -31,6 +31,6 @@ setup(
     packages=find_packages(include=["creditcard", "creditcard.*"]),
     setup_requires=setup_requirements,
     url="https://github.com/MaisTodos/python-creditcard",
-    version="0.0.1",
+    version="0.0.2",
     zip_safe=False,
 )
