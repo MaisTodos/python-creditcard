@@ -1,4 +1,4 @@
-pip-tools==5.2.1
+pip-tools
 ipython
 black
 pre-commit
