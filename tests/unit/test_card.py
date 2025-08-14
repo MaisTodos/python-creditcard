@@ -38,12 +38,12 @@ class TestCard:
             ("cabal", "6043240000000000"),
             ("master", "5369835519963014"),
             ("master", "5269116044687225"),
-            ("master", "5899162511244726"),
-            ("master", "5021316371000112"),
-            ("master", "5930422341037703"),
-            ("master", "6039137880232543"),
-            ("master", "6063216106123345"),
-            ("master", "6392403325708112"),
+            ("master", "5899162511244726"),  # antigo maestro
+            ("master", "5021316371000112"),  # antigo maestro
+            ("master", "5930422341037703"),  # antigo maestro
+            ("master", "6039137880232543"),  # antigo maestro
+            ("master", "6063216106123345"),  # antigo maestro
+            ("master", "6392403325708112"),  # antigo maestro
             ("codensa", "8700551111111111"),
             ("codensa", "5907121111111111"),
             ("codensa", "5294481111111111"),
