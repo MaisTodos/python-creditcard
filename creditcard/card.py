@@ -24,7 +24,7 @@ BRAND_REGEX = {
         r"|2[3-6][0-9]{14}"
         r"|27[01][0-9]{13}"
         r"|2720[0-9]{12}"
-        # Maestro
+        # Suporte aos antigos cartões Maestro que agora são MasterCard
         r"|5[06789][0-9]{14}"
         r"|600[689][0-9]{12}"
         r"|602[468][0-9]{12}"
