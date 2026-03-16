@@ -45,6 +45,9 @@ class TestCard:
             ("master", "6039137880232543"),  # antigo maestro
             ("master", "6063216106123345"),  # antigo maestro
             ("master", "6392403325708112"),  # antigo maestro
+            ("master", "6087101111111111"),
+            ("master", "6087831111111111"),
+            ("master", "5502091111111111"),
             ("codensa", "8700551111111111"),
             ("codensa", "5907121111111111"),
             ("codensa", "5294481111111111"),
