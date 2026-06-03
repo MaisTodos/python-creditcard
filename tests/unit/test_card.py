@@ -21,6 +21,10 @@ class TestCard:
         card = CreditCard("0000000000000a")
         assert card.is_valid() is False
 
+        # Cartão Softnex que não é válido pelo Luhn
+        card = CreditCard("6108000123456789")
+        assert card.is_valid() is True
+
     @pytest.mark.parametrize(
         "brand, number",
         [

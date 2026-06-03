@@ -1,4 +1,5 @@
 import re
+from functools import cached_property
 
 from .exceptions import BrandNotFound
 from .luhn import Luhn
@@ -69,11 +70,20 @@ class CreditCard:
     def __init__(self, number):
         self.number = sanitize(number)
 
-    def is_valid(self):
-        return all([len(self.number) in range(13, 19), Luhn.checkdigit(self.number)])
-
-    def get_brand(self):
+    @cached_property
+    def _brand(self):
         for brand, regex in BRAND_REGEX.items():
             if re.match(regex, self.number):
                 return brand
+        return None
+
+    def is_valid(self):
+        if self._brand == "softnex":
+            # Softnex emite cartões que não são válidos pelo Luhn
+            return True
+        return len(self.number) in range(13, 19) and Luhn.checkdigit(self.number)
+
+    def get_brand(self):
+        if brand := self._brand:
+            return brand
         raise BrandNotFound("Card number does not match any brand")
