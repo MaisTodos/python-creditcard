@@ -11,8 +11,9 @@ class TestLuhn:
             ("5369835519963014", True),
             ("5369835519963013", False),
             ("30346836403940", True),
-            ("6108000000000040", True),
+            ("6108000158537041", True),
             ("6108000000000041", False),
+            ("6108000000000040", True),
         ],
     )
     def test_check(self, number, expected):
@@ -21,6 +22,7 @@ class TestLuhn:
     @pytest.mark.parametrize(
         "number,expected",
         [
+            ("6108000158537041", True),
             ("6108000000000041", True),
             ("6108000000000040", False),
         ],
