@@ -1,8 +1,8 @@
 import re
 from functools import cached_property
 
+from . import luhn
 from .exceptions import BrandNotFound
-from .luhn import Luhn
 from .utils import sanitize
 
 BRAND_REGEX = {
@@ -78,10 +78,13 @@ class CreditCard:
         return None
 
     def is_valid(self):
+        if not self.number.isdigit():
+            return False
+
         if self._brand == "softnex":
-            # Softnex emite cartões que não são válidos pelo Luhn
-            return True
-        return len(self.number) in range(13, 19) and Luhn.checkdigit(self.number)
+            return len(self.number) == 16 and luhn.check_softnex(self.number)
+
+        return len(self.number) in range(13, 19) and luhn.check(self.number)
 
     def get_brand(self):
         if brand := self._brand:
