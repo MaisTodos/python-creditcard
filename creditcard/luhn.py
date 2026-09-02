@@ -1,12 +1,13 @@
-def sum_digits(digits):
+def sum_digits(digits, start_index=1):
     total = 0
-    for i, digit in enumerate(digits, start=1):
-        # Se o índice (iniciando em 1) for ímpar, o valor do dígito é o dígito
-        # original multiplicado por dois, com os dígitos resultantes somados,
-        # o que equivale a subtrair 9 se o valor for maior que 9.
+    for i, digit in enumerate(digits, start=start_index):
+        # Se o índice (iniciando em 1, da direita para a esquerda) for ímpar,
+        # o valor do dígito é o dígito original multiplicado por dois, com os
+        # dígitos resultantes somados, o que equivale a subtrair 9 se o valor
+        # for maior que 9.
         # Se for par, o próprio dígito é utilizado, que já está entre 0 e 9.
         d = int(digit)
-        if i % 2 == 1:
+        if (len(digits) - i) % 2 == 1:
             d *= 2
             if d > 9:
                 d -= 9
@@ -20,7 +21,7 @@ def check(digits):
 
 
 def check_softnex(digits):
-    total = sum_digits(digits[:15])
+    total = sum_digits(digits[:15], start_index=2)
     # A Softnex diverge do Luhn tradicional no cálculo do último dígito.
     # Enquanto o Luhn apenas requer que a soma em módulo 10 seja 0, a Softnex
     # modifica o dígito para 1 se o mesmo for 0, o que faz com que o Luhn recuse
